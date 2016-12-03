@@ -8,6 +8,9 @@ import javax.swing.*;
 
 public class GUI extends JFrame {
     public GUI() {
+        ImageIcon img = new ImageIcon("src/image/icon.png");
+        
+        setIconImage(img.getImage());
         setTitle("Netflix Statistix");
         setSize(600, 400);
         setLocationRelativeTo(null);
