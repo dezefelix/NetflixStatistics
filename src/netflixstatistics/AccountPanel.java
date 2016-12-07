@@ -14,7 +14,8 @@ class AccountPanel extends JPanel {
     private JComboBox contentAccountBox;
     
             
-    public AccountPanel() {
+    public AccountPanel() 
+    {
         //Setting layout for hole panel
         setLayout(new BorderLayout());
         
