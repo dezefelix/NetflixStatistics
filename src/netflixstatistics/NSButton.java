@@ -4,6 +4,7 @@ package netflixstatistics;
 
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.border.LineBorder;
 
 
 public class NSButton extends JButton{
@@ -14,19 +15,20 @@ public class NSButton extends JButton{
     {
         super(label);
         
-        setBackground(Color.BLACK);
         setForeground(Color.WHITE);
         
         if (isWindows()) 
         {
 		setOpaque(true);
                 setBorderPainted(true);
+                setBackground(Color.BLACK);
                 System.out.println("OS IS WINDOWS");
         } 
         else if (isMac()) 
         {
 		setOpaque(true);
                 setBorderPainted(false);
+                setBackground(Color.DARK_GRAY);
                 System.out.println("OS IS MACS");
         }
         
