@@ -9,8 +9,8 @@ import javax.swing.*;
 class AccountPanel extends JPanel {
     private final JPanel menu, content;
     private final BannerPanel banner;
-    private final JButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn;
-    private final JButton contentFilmBtn, contentShowBtn;
+    private final NSButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn;
+    private final NSButton contentFilmBtn, contentShowBtn;
     private JComboBox contentAccountBox;
     
             
@@ -28,22 +28,16 @@ class AccountPanel extends JPanel {
         menu = new JPanel();
             
             //Initializing buttons
-            menuAccBtn = new JButton("Account");
-            menuFilmBtn = new JButton("Film");
-            menuShowBtn = new JButton("Show");
-            menuExtraBtn = new JButton("Extra");
+            menuAccBtn = new NSButton("Account");
+            menuFilmBtn = new NSButton("Film");
+            menuShowBtn = new NSButton("Show");
+            menuExtraBtn = new NSButton("Extra");
         
             //Setting background color for buttons
             menuAccBtn.setBackground(Color.WHITE);//Is white because active
-            menuFilmBtn.setBackground(Color.BLACK);
-            menuShowBtn.setBackground(Color.BLACK);
-            menuExtraBtn.setBackground(Color.BLACK);
-        
+       
             //Setting text color for buttons
             menuAccBtn.setForeground(Color.BLACK);//Is black because active
-            menuFilmBtn.setForeground(Color.WHITE);
-            menuShowBtn.setForeground(Color.WHITE);
-            menuExtraBtn.setForeground(Color.WHITE);
         
             //adding buttons in menupanel
             menu.add(menuAccBtn);
@@ -61,23 +55,14 @@ class AccountPanel extends JPanel {
             content.setLayout(null);
             
             //Initializing buttons and combobox
-            contentFilmBtn = new JButton("Film");
-            contentShowBtn = new JButton("Show");
+            contentFilmBtn = new NSButton("Film");
+            contentShowBtn = new NSButton("Show");
             contentAccountBox = new JComboBox();
             
             //Setting location of buttons
             contentAccountBox.setBounds(50,30,400,25);
             contentFilmBtn.setBounds(50,70,200,100);
-            contentShowBtn.setBounds(250,70,200,100);
-            
-            //Setting background color buttons
-            contentFilmBtn.setBackground(Color.BLACK);
-            contentShowBtn.setBackground(Color.BLACK);
-            
-            //Setting text color buttons
-            contentFilmBtn.setForeground(Color.WHITE);
-            contentShowBtn.setForeground(Color.WHITE);
-            
+            contentShowBtn.setBounds(250,70,200,100);                        
      
             //Adding buttons in contentpanel
             content.add(contentAccountBox);
