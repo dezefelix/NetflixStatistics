@@ -3,6 +3,8 @@ package netflixstatistics;
 // @AUTHOR Felix
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
  
@@ -13,9 +15,12 @@ class AccountPanel extends JPanel {
     private final NSButton contentFilmBtn, contentShowBtn;
     private JComboBox contentAccountBox;
     
+    private JPanel thisPanel;
             
     public AccountPanel() 
     {
+        thisPanel = this;
+        
         //Setting layout for hole panel
         setLayout(new BorderLayout());
         
@@ -33,6 +38,9 @@ class AccountPanel extends JPanel {
             menuFilmBtn = new NSButton("Film");
             menuShowBtn = new NSButton("Show");
             menuExtraBtn = new NSButton("Extra");
+            
+            MenuShowBtnHandler menuShowBtnHandler = new MenuShowBtnHandler();
+            menuShowBtn.addActionListener(menuShowBtnHandler);
         
             //Setting background color for buttons
             menuAccBtn.setBackground(Color.WHITE);//Is white because active
@@ -60,6 +68,9 @@ class AccountPanel extends JPanel {
             contentShowBtn = new NSButton("Show");
             contentAccountBox = new JComboBox();
             
+            ShowBtnHandler showBtnHandler = new ShowBtnHandler();
+            contentShowBtn.addActionListener(showBtnHandler);
+           
             //Setting location of buttons
             contentAccountBox.setBounds(50,30,400,25);
             contentFilmBtn.setBounds(50,70,200,100);
@@ -75,4 +86,25 @@ class AccountPanel extends JPanel {
         add(content, BorderLayout.CENTER);
         add(menu, BorderLayout.WEST);
     }
+    
+    class MenuShowBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            ShowGUI showGUI = new ShowGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+    
+    class ShowBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            ShowAccGUI showAccGUI = new ShowAccGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+    
 }
