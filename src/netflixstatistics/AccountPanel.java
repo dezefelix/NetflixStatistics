@@ -39,8 +39,14 @@ class AccountPanel extends JPanel {
             menuShowBtn = new NSButton("Show");
             menuExtraBtn = new NSButton("Extra");
             
+            //Adding handlers to buttons
+            MenuAccBtnHandler menuAccBtnHandler = new MenuAccBtnHandler();
+            menuAccBtn.addActionListener(menuAccBtnHandler);
+            MenuFilmBtnHandler menuFilmBtnHandler = new MenuFilmBtnHandler();
+            menuFilmBtn.addActionListener(menuFilmBtnHandler);
             MenuShowBtnHandler menuShowBtnHandler = new MenuShowBtnHandler();
             menuShowBtn.addActionListener(menuShowBtnHandler);
+            
         
             //Setting background color for buttons
             menuAccBtn.setBackground(Color.WHITE);//Is white because active
@@ -68,8 +74,11 @@ class AccountPanel extends JPanel {
             contentShowBtn = new NSButton("Show");
             contentAccountBox = new JComboBox();
             
+            //Adding handlers to buttons
             ShowBtnHandler showBtnHandler = new ShowBtnHandler();
             contentShowBtn.addActionListener(showBtnHandler);
+            FilmBtnHandler filmBtnHandler = new FilmBtnHandler();
+            contentFilmBtn.addActionListener(filmBtnHandler);
            
             //Setting location of buttons
             contentAccountBox.setBounds(50,30,400,25);
@@ -87,24 +96,50 @@ class AccountPanel extends JPanel {
         add(menu, BorderLayout.WEST);
     }
     
-    class MenuShowBtnHandler implements ActionListener
+    //Handlers for menu buttons
+     class MenuAccBtnHandler implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ShowGUI showGUI = new ShowGUI();
+            new GUI();
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
-    }
-    
-    class ShowBtnHandler implements ActionListener
+    }class MenuFilmBtnHandler implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            ShowAccGUI showAccGUI = new ShowAccGUI();
+            new FilmGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }class MenuShowBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new ShowGUI();
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
     }
-    
+        
+    //Handlers for content buttons    
+        class ShowBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new ShowAccGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }class FilmBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new FilmAccGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+        
 }

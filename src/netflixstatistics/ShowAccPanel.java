@@ -3,6 +3,8 @@ package netflixstatistics;
 // @AUTHOR Felix
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
  
@@ -14,9 +16,13 @@ class ShowAccPanel extends JPanel {
     private JLabel title, averageWatched;
     private JComboBox showBox, episodeBox;
     
+    private JPanel thisPanel;
+    
             
     public ShowAccPanel() 
     {
+        thisPanel = this;
+        
         //Setting layout for hole panel
         setLayout(new BorderLayout());
         
@@ -34,6 +40,14 @@ class ShowAccPanel extends JPanel {
             menuFilmBtn = new NSButton("Film");
             menuShowBtn = new NSButton("Show");
             menuExtraBtn = new NSButton("Extra");
+            
+            //Adding handlers to buttons
+            MenuAccBtnHandler menuAccBtnHandler = new MenuAccBtnHandler();
+            menuAccBtn.addActionListener(menuAccBtnHandler);
+            MenuFilmBtnHandler menuFilmBtnHandler = new MenuFilmBtnHandler();
+            menuFilmBtn.addActionListener(menuFilmBtnHandler);
+            MenuShowBtnHandler menuShowBtnHandler = new MenuShowBtnHandler();
+            menuShowBtn.addActionListener(menuShowBtnHandler);
         
             //Setting background color for buttons
             menuShowBtn.setBackground(Color.WHITE);//Is white because active
@@ -104,5 +118,36 @@ class ShowAccPanel extends JPanel {
         add(banner, BorderLayout.NORTH);
         add(content, BorderLayout.CENTER);
         add(menu, BorderLayout.WEST);
+    }
+    
+    //Handlers for menu buttons
+     class MenuAccBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new GUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+
+        class MenuFilmBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new FilmGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+        
+        class MenuShowBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new ShowGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
     }
 }
