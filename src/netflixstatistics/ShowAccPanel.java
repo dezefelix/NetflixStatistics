@@ -50,10 +50,10 @@ class ShowAccPanel extends JPanel {
             menuShowBtn.addActionListener(menuShowBtnHandler);
         
             //Setting background color for buttons
-            menuShowBtn.setBackground(Color.WHITE);//Is white because active
+            menuAccBtn.setBackground(Color.WHITE);//Is white because active
        
             //Setting text color for buttons
-            menuShowBtn.setForeground(Color.BLACK);//Is black because active
+            menuAccBtn.setForeground(Color.BLACK);//Is black because active
         
             //adding buttons in menupanel
             menu.add(menuAccBtn);

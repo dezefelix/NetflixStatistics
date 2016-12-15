@@ -57,10 +57,10 @@ class FilmAccPanel extends JPanel {
             scrollPane = new JScrollPane(films);
         
             //Setting background color for buttons
-            menuFilmBtn.setBackground(Color.WHITE);//Is white because active
+            menuAccBtn.setBackground(Color.WHITE);//Is white because active
        
             //Setting text color for buttons & labels
-            menuFilmBtn.setForeground(Color.BLACK);//Is black because active
+            menuAccBtn.setForeground(Color.BLACK);//Is black because active
             profileNameLb.setForeground(Color.WHITE);
             filmsWatchedLb.setForeground(Color.WHITE);
         
