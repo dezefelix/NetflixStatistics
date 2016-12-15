@@ -18,7 +18,7 @@ public class CreateAccPanel extends JPanel {
     private NSButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn, menuConfigBtn;
     private JTextField subNumberField, nameField, addressField, cityField; 
     private JLabel subNumber, name, address, city; 
-    private NSButton cancel, create; 
+    private NSButton cancel, confirm; 
     
     private JPanel thisPanel;
             
@@ -99,7 +99,7 @@ public class CreateAccPanel extends JPanel {
             
             //Initializing buttons
             cancel = new NSButton("Cancel");
-            create = new NSButton("Create account");
+            confirm = new NSButton("Create account");
      
             CancelBtnHandler cancelBtnHandler = new CancelBtnHandler();
             cancel.addActionListener(cancelBtnHandler);
@@ -114,7 +114,7 @@ public class CreateAccPanel extends JPanel {
             content.add(city);
             content.add(cityField);
             content.add(cancel);
-            content.add(create);
+            content.add(confirm);
             
         //Adding panels to Accountpanel
         add(banner, BorderLayout.NORTH);

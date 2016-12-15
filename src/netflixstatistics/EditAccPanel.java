@@ -18,7 +18,7 @@ public class EditAccPanel extends JPanel {
     private NSButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn, menuConfigBtn;
     private JTextField nameField, addressField, cityField; 
     private JLabel subNumber, name, address, city; 
-    private NSButton cancel, create; 
+    private NSButton cancel, confirm; 
     private JComboBox subNumberBox;
     
     private JPanel thisPanel;
@@ -104,7 +104,7 @@ public class EditAccPanel extends JPanel {
             
             //Initializing buttons
             cancel = new NSButton("Cancel");
-            create = new NSButton("Edit account");
+            confirm = new NSButton("Edit account");
      
             CancelBtnHandler cancelBtnHandler = new CancelBtnHandler();
             cancel.addActionListener(cancelBtnHandler);
@@ -119,7 +119,7 @@ public class EditAccPanel extends JPanel {
             content.add(city);
             content.add(cityField);
             content.add(cancel);
-            content.add(create);
+            content.add(confirm);
             
         //Adding panels to Accountpanel
         add(banner, BorderLayout.NORTH);

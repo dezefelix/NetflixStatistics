@@ -111,12 +111,20 @@ public class ConfigPanel extends JPanel {
             //Handlers for buttons
             CreateAccBtnHandler createAccBtnHandler = new CreateAccBtnHandler();
             createAcc.addActionListener(createAccBtnHandler);
+            CreateProfileBtnHandler createProfileBtnHandler = new CreateProfileBtnHandler();
+            createProfile.addActionListener(createProfileBtnHandler);
+            CreateWatchingBtnHandler createWatchingBtnHandler = new CreateWatchingBtnHandler();
+            createWatching.addActionListener(createWatchingBtnHandler);
             
             EditAccBtnHandler editAccBtnHandler = new EditAccBtnHandler();
             editAcc.addActionListener(editAccBtnHandler);
+            EditProfileBtnHandler editProfileBtnHandler = new EditProfileBtnHandler();
+            editProfile.addActionListener(editProfileBtnHandler);
             
             DeleteAccBtnHandler deleteAccBtnHandler = new DeleteAccBtnHandler();
             deleteAcc.addActionListener(deleteAccBtnHandler);
+            DeleteProfileBtnHandler deleteProfileBtnHandler = new DeleteProfileBtnHandler();
+            deleteProfile.addActionListener(deleteProfileBtnHandler);
      
             //Adding buttons in contentpanel
             content.add(account);
@@ -147,8 +155,7 @@ public class ConfigPanel extends JPanel {
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
     }
-
-        class MenuFilmBtnHandler implements ActionListener
+         class MenuFilmBtnHandler implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
@@ -157,8 +164,7 @@ public class ConfigPanel extends JPanel {
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
     }
-        
-        class MenuShowBtnHandler implements ActionListener
+         class MenuShowBtnHandler implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e)
@@ -168,7 +174,7 @@ public class ConfigPanel extends JPanel {
         }
     }
         
-    //Handlers for config buttons
+    //Handlers for config create buttons
 
         class CreateAccBtnHandler implements ActionListener
     {
@@ -179,7 +185,26 @@ public class ConfigPanel extends JPanel {
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
     }
+        class CreateProfileBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CreateProfileGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
+              class CreateWatchingBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new CreateWatchingGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
         
+    //Handlers for config edit buttons
         class EditAccBtnHandler implements ActionListener
     {
         @Override
@@ -189,7 +214,17 @@ public class ConfigPanel extends JPanel {
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
     }
+              class EditProfileBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new EditProfileGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }
         
+    //Handlers for config delete buttons
               class DeleteAccBtnHandler implements ActionListener
     {
         @Override
@@ -198,5 +233,14 @@ public class ConfigPanel extends JPanel {
             new DeleteAccGUI();
             SwingUtilities.windowForComponent(thisPanel).dispose();
         }
-    }  
+    }
+              class DeleteProfileBtnHandler implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            new DeleteProfileGUI();
+            SwingUtilities.windowForComponent(thisPanel).dispose();
+        }
+    }            
 }
