@@ -11,7 +11,7 @@ import javax.swing.*;
 class FilmPanel extends JPanel {
     private final JPanel menu, content;
     private final BannerPanel banner;
-    private final NSButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn;
+    private final NSButton menuAccBtn, menuFilmBtn, menuShowBtn, menuExtraBtn, menuConfigBtn;
     private JComboBox contentAccountBox;
     private JLabel nrOfUsersLb, nrOfUsers;
     
@@ -38,6 +38,7 @@ class FilmPanel extends JPanel {
             menuFilmBtn = new NSButton("Film");
             menuShowBtn = new NSButton("Show");
             menuExtraBtn = new NSButton("Extra");
+            menuConfigBtn= new NSButton("Config");
             
             //Adding handlers to buttons
             MenuAccBtnHandler menuAccBtnHandler = new MenuAccBtnHandler();
@@ -64,6 +65,7 @@ class FilmPanel extends JPanel {
             menu.add(menuFilmBtn);
             menu.add(menuShowBtn);
             menu.add(menuExtraBtn);
+            menu.add(menuConfigBtn);
             menu.setLayout(new GridLayout(4,1));
         
         //content
