@@ -62,7 +62,7 @@ class ShowAccPanel extends JPanel {
             menu.add(menuShowBtn);
             menu.add(menuExtraBtn);
             menu.add(menuConfigBtn);
-            menu.setLayout(new GridLayout(4,1));
+            menu.setLayout(new GridLayout(5,1));
         
         //content
         content = new JPanel();
